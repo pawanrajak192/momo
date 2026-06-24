@@ -1,0 +1,292 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+/* Animated Gradient Background */
+background: linear-gradient(135deg, #180000, #4b0000, #8b0000, #d62828);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow-x:hidden;
+color:white;
+min-height:100vh;
+}
+
+/* ANIMATED BACKGROUND KEYFRAMES */
+@keyframes bgMove{
+0%{ background-position:0% 50%; }
+50%{ background-position:100% 50%; }
+100%{ background-position:0% 50%; }
+}
+
+/* PARTICLES BACKGROUND */
+.particles{
+position:fixed;
+width:100%; height:100%;
+top:0; left:0;
+z-index:-2;
+overflow:hidden;
+}
+
+.particles::before{
+content:"";
+position:absolute;
+width:200%; height:200%;
+background: radial-gradient(rgba(255,255,255,.15) 2px, transparent 2px);
+background-size:60px 60px;
+animation:particlesMove 25s linear infinite;
+}
+
+@keyframes particlesMove{
+from{ transform:translateY(0); }
+to{ transform:translateY(-400px); }
+}
+
+/* SCREEN VISIBILITY CONTROL */
+.screen{
+display:none; /* Kept hidden initially */
+min-height:100vh;
+padding:30px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+/* Active Screen Layout (Flex toggle) */
+.screen.active{
+display:flex !important;
+animation:fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{
+from{ opacity:0; transform:translateY(20px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+/* GLASS CARD SETUP */
+.glass-card{
+background: rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border: 1px solid rgba(255,255,255,.12);
+border-radius:25px;
+box-shadow: 0 8px 35px rgba(0,0,0,.25);
+}
+
+/* LOGIN CARD LAYOUT */
+.login-card{
+width:100%;
+max-width:900px;
+padding:40px;
+display:flex;
+gap:40px;
+justify-content:center;
+align-items:center;
+}
+
+.profile-box{ text-align:center; }
+.profile-box img{
+width:250px;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+box-shadow: 0 10px 30px rgba(0,0,0,.4);
+background-color: rgba(255, 255, 255, 0.1); /* Fallback placeholder */
+}
+
+.profile-box h1{ margin-top:20px; font-size:35px; }
+.password-box{ width:300px; }
+.password-box h3{ text-align:center; margin-bottom:20px; }
+
+/* DOTS SECTION */
+.dots-container{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:25px;
+}
+.dot{
+width:12px; height:12px;
+border-radius:50%;
+border:2px solid white;
+transition: background-color 0.2s ease;
+}
+
+/* KEYPAD SECTION */
+.keypad{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+gap:15px;
+}
+.keypad button{
+height:65px;
+border:none;
+border-radius:50%;
+background: rgba(255,255,255,.15);
+color:white;
+font-size:22px;
+cursor:pointer;
+transition:.3s;
+}
+.keypad button:hover{
+transform:scale(1.1);
+background: rgba(255,255,255,.3);
+}
+
+/* LOADER SECTION */
+.loader-container{ text-align:center; }
+.countdown{ font-size:90px; font-weight:700; margin:30px 0; }
+.progress-bar{
+width:350px; height:10px;
+background: rgba(255,255,255,.2);
+border-radius:50px;
+overflow:hidden;
+}
+#progress{
+width:0%; height:100%;
+background: linear-gradient(90deg, gold, orange);
+transition: width 0.3s linear;
+}
+
+/* ENVELOPE SECTION */
+.envelope{
+width:280px; height:180px;
+background:#b30000;
+margin-top:30px;
+cursor:pointer;
+position:relative;
+transition:1s;
+}
+.envelope:hover{ transform: rotateY(15deg) scale(1.05); }
+.front{
+position:absolute;
+width:100%; height:100%;
+background:#d62828;
+clip-path: polygon(0 0, 100% 0, 50% 50%);
+z-index: 2;
+}
+.letter{
+position:absolute;
+width:90%; height:85%;
+background:white;
+color:black;
+top:10px; left:5%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:600;
+z-index: 1;
+}
+
+/* LETTER CARD SECTION */
+.letter-card{ max-width:800px; padding:50px; text-align:center; }
+.letter-card h1{ margin-bottom:20px; font-size:50px; }
+#typingText{ font-size:18px; line-height:1.8; white-space: pre-line; }
+
+/* PREMIUM BUTTON LAYOUT */
+.premium-btn{
+padding:15px 35px;
+margin-top:30px;
+border:none;
+border-radius:50px;
+background: linear-gradient(45deg, #ff416c, #ff4b2b);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+}
+.premium-btn:hover{
+transform:translateY(-5px);
+box-shadow: 0 10px 25px rgba(255,75,43,.5);
+}
+
+/* TITLE STYLE */
+.section-title{
+font-size:55px;
+margin-bottom:40px;
+text-align:center;
+background: linear-gradient(45deg, gold, white, gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* TIMELINE GRID */
+.timeline{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+width:100%;
+max-width:1100px;
+}
+.timeline .glass-card{ padding:20px; text-align:center; }
+.timeline img{
+width:100%; height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+transition:.4s;
+background: rgba(255,255,255,0.1); /* Fallback */
+}
+.timeline img:hover{ transform:scale(1.05); }
+
+/* SPECIAL GRID SECTION */
+.special-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+width:100%;
+max-width:1100px;
+}
+.special-card{ padding:30px; text-align:center; }
+.special-card h2{ margin-bottom:15px; }
+
+/* REPORT CARD SECTION */
+.stats-grid{ display:flex; gap:40px; flex-wrap:wrap; justify-content:center; }
+.circle-card{ text-align:center; }
+.circle{
+width:170px; height:170px;
+border-radius:50%;
+border:10px solid gold;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+font-weight:700;
+background: rgba(255,255,255,.08);
+}
+
+/* MUSIC PLAYER SECTION (TOP RIGHT Positioned) */
+.music-player{
+position:fixed;
+top:20px; right:20px;
+z-index:1000;
+padding:12px 18px;
+border-radius:50px;
+background: rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+display:flex;
+gap:15px;
+align-items:center;
+}
+.music-player button{
+border:none; background:white;
+padding:8px 15px; border-radius:30px;
+cursor:pointer;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media(max-width:768px){
+.login-card{ flex-direction:column; gap: 20px; }
+.profile-box img{ width:220px; height:260px; }
+.section-title{ font-size:35px; }
+.letter-card{ padding:25px; }
+.letter-card h1{ font-size:35px; }
+.circle{ width:130px; height:130px; font-size:28px; }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Momo ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="particles"></div>
+
+<div class="music-player" id="musicPlayer">
+    <div class="music-info">
+        <span>🎵 Birthday Vibes</span>
+    </div>
+    <button id="musicBtn">Play</button>
+</div>
+
+<section id="screen1" class="screen active">
+    <div class="glass-card login-card">
+        <div class="profile-box">
+            <img src="images/momo1.jpeg" alt="Momo">
+            <h1>Happy Birthday Momo ❤️</h1>
+        </div>
+        <div class="password-box">
+            <h3>Enter Secret Date</h3>
+            <div class="dots-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="keypad">
+                <button onclick="pressNum('1')">1</button>
+                <button onclick="pressNum('2')">2</button>
+                <button onclick="pressNum('3')">3</button>
+                <button onclick="pressNum('4')">4</button>
+                <button onclick="pressNum('5')">5</button>
+                <button onclick="pressNum('6')">6</button>
+                <button onclick="pressNum('7')">7</button>
+                <button onclick="pressNum('8')">8</button>
+                <button onclick="pressNum('9')">9</button>
+                <button onclick="clearAll()">C</button>
+                <button onclick="pressNum('0')">0</button>
+                <button onclick="submitPass()">➜</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="screen2" class="screen">
+    <div class="loader-container">
+        <h1>✨ Preparing Something Magical ✨</h1>
+        <div class="countdown">
+            <span id="count">3</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+</section>
+
+<section id="screen3" class="screen">
+    <div class="envelope-wrapper">
+        <h1>You've Got A Special Letter 💌</h1>
+        <div class="envelope" onclick="openLetter()">
+            <div class="front"></div>
+            <div class="letter">
+                <span>Open Me ❤️</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="screen4" class="screen">
+    <div class="glass-card letter-card">
+        <h1>Dear Momo ❤️</h1>
+        <p id="typingText"></p>
+        <button class="premium-btn" onclick="openTimeline()">Continue ✨</button>
+    </div>
+</section>
+
+<section id="screen5" class="screen">
+    <h1 class="section-title">Beautiful Memories 🌸</h1>
+    <div class="timeline">
+        <div class="glass-card">
+            <img src="images/momo2.jpeg" alt="Memory 1">
+            <h3>First Meeting</h3>
+            <p>The day everything became brighter.</p>
+        </div>
+        <div class="glass-card">
+            <img src="images/momo3.jpeg" alt="Memory 2">
+            <h3>Crazy Conversations</h3>
+            <p>Endless talks and unforgettable moments.</p>
+        </div>
+        <div class="glass-card">
+            <img src="images/momo4.jpeg" alt="Memory 3">
+            <h3>Best Smile Ever</h3>
+            <p>A smile capable of fixing any bad day.</p>
+        </div>
+    </div>
+    <button class="premium-btn" onclick="openShizukaPage()">Next Surprise ➜</button>
+</section>
+
+<section id="screen6" class="screen">
+    <h1 class="section-title">Why You're Special 🌷</h1>
+    <div class="special-grid">
+        <div class="glass-card special-card">
+            <h2>💖 Pure Heart</h2>
+            <p>Your kindness makes everything better.</p>
+        </div>
+        <div class="glass-card special-card">
+            <h2>✨ Beautiful Soul</h2>
+            <p>You spread happiness wherever you go.</p>
+        </div>
+        <div class="glass-card special-card">
+            <h2>🌟 Rare Vibe</h2>
+            <p>One of the most genuine people ever.</p>
+        </div>
+    </div>
+    <button class="premium-btn" onclick="openReportCard()">Continue ➜</button>
+</section>
+
+<section id="screen7" class="screen">
+    <h1 class="section-title">Momo's Superpowers 📊</h1>
+    <div class="stats-grid">
+        <div class="circle-card">
+            <div class="circle">100%</div>
+            <h3>Cuteness</h3>
+        </div>
+        <div class="circle-card">
+            <div class="circle">95%</div>
+            <h3>Sweetness</h3>
+        </div>
+        <div class="circle-card">
+            <div class="circle">∞</div>
+            <h3>Caring</h3>
+        </div>
+    </div>
+    <button class="premium-btn" onclick="openChecklist()">Continue ➜</button>
+</section>
+
+<section id="screen8" class="screen">
+    <h1 class="section-title">Perfect Human Checklist ☑️</h1>
+    <div class="glass-card letter-card" style="text-align: left; max-width: 500px; padding: 30px;">
+        <p style="margin-bottom: 15px;">✔️ Purest Smile Ever</p>
+        <p style="margin-bottom: 15px;">✔️ Overthinking Expert</p>
+        <p style="margin-bottom: 15px;">✔️ Heart of Pure Gold</p>
+        <p style="margin-bottom: 15px;">✔️ World's Best Listener</p>
+        <p style="margin-bottom: 15px;">✔️ Cutest Drama Queen</p>
+    </div>
+    <button class="premium-btn" onclick="openFinalPage()">See Grand Surprise 🎁</button>
+</section>
+
+<section id="screen9" class="screen">
+    <div class="glass-card letter-card" style="padding: 40px;">
+        <h1 style="font-size: 60px; color: gold; margin-bottom: 10px;">🎉 HAPPY BIRTHDAY 🎉</h1>
+        <h2 style="font-size: 40px; margin-bottom: 20px;">🎉 MOMO ❤️ 🎉</h2>
+        <p style="font-size: 20px; line-height: 1.6;">May your day be filled with lots of smiles, love, and infinite happiness!</p>
+        <p style="margin-top: 30px; color: gold; font-size: 14px;">(Fireworks Blast Again On Load!)</p>
+        <button class="premium-btn" onclick="celebrateBirthday()">Blast Fireworks Again 🎆</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
